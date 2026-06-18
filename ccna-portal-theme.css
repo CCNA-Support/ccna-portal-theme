@@ -498,11 +498,26 @@ body {
   background-color: transparent !important;
 }
 
-/* All portal content sits naturally above background - no z-index needed */
+/* Subtle white overlay - washes image back without blocking clicks */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0; left: 0; right: 0; bottom: 0 !important;
+  background: rgba(255, 255, 255, 0.78) !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* All portal content sits above overlay */
 .menu,
 div.webapp-page,
-footer.app-footer {
+footer.app-footer,
+nav.navbar,
+.navbar,
+.dropdown,
+.dropdown-menu {
   position: relative !important;
+  z-index: 100 !important;
 }
 
 /* ── Login page: logo above form ──────────────────────────────────── */
