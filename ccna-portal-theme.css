@@ -511,13 +511,25 @@ body::before {
 /* All portal content sits above overlay */
 .menu,
 div.webapp-page,
-footer.app-footer,
-nav.navbar,
-.navbar,
-.dropdown,
-.dropdown-menu {
+footer.app-footer {
   position: relative !important;
-  z-index: 100 !important;
+  z-index: 1 !important;
+}
+
+/* Navbar and dropdowns must be highest */
+nav.navbar,
+.navbar {
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+.dropdown-menu,
+.open .dropdown-menu,
+ul.dropdown-menu,
+.navbar .dropdown-menu {
+  z-index: 9999 !important;
+  position: absolute !important;
+  pointer-events: auto !important;
 }
 
 /* ── Login page: logo above form ──────────────────────────────────── */
