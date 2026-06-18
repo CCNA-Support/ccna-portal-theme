@@ -1,0 +1,519 @@
+/*
+ * CCNA Customer Portal - Custom Theme
+ * Derived from ccna.com.au brand identity
+ *
+ * Palette:
+ *   --navy:      #00053D  (primary dark, Elementor global primary)
+ *   --teal:      #00A89D  (hero gradient start)
+ *   --green:     #7DC242  (hero gradient end / accent)
+ *   --white:     #FFFFFF
+ *   --light-bg:  #F5F6FA  (off-white page background)
+ *   --text-dark: #1A1A2E  (body text)
+ *   --text-mid:  #555570  (secondary text)
+ *   --border:    #D8DAE8  (subtle borders)
+ *
+ * Fonts: Poppins (headings), Roboto (body) — both from Google Fonts
+ */
+
+/* ── Google Fonts ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* ── CSS Variables ────────────────────────────────────────────────── */
+:root {
+  --ccna-navy:     #00053D;
+  --ccna-teal:     #00A89D;
+  --ccna-green:    #7DC242;
+  --ccna-white:    #FFFFFF;
+  --ccna-light-bg: #F5F6FA;
+  --ccna-text:     #1A1A2E;
+  --ccna-text-mid: #555570;
+  --ccna-border:   #D8DAE8;
+  --ccna-gradient: linear-gradient(135deg, #00A89D 0%, #4BB87A 50%, #7DC242 100%);
+}
+
+/* ── Base & Typography ────────────────────────────────────────────── */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--ccna-light-bg);
+  color: var(--ccna-text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--ccna-navy);
+  font-weight: 600;
+}
+
+a {
+  color: var(--ccna-teal);
+}
+
+a:hover {
+  color: var(--ccna-green);
+  text-decoration: none;
+}
+
+/* ── Navigation Bar ───────────────────────────────────────────────── */
+.navbar,
+.navbar-inverse {
+  background: var(--ccna-navy) !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 5, 61, 0.25);
+}
+
+/* Gradient accent strip under navbar */
+.navbar::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: var(--ccna-gradient);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar-inverse .navbar-brand {
+  color: var(--ccna-white) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: rgba(255,255,255,0.85) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > .active > a {
+  color: var(--ccna-white) !important;
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+/* ── Login Page ───────────────────────────────────────────────────── */
+.login-container,
+#login-container,
+.vt-login-container {
+  background: var(--ccna-light-bg);
+  min-height: 100vh;
+}
+
+.login-panel,
+.panel.login-panel,
+.loginpanel {
+  background: var(--ccna-white);
+  border: none !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 5, 61, 0.12);
+  overflow: hidden;
+}
+
+/* Teal top accent on login panel */
+.login-panel::before,
+.loginpanel::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: var(--ccna-gradient);
+}
+
+.login-panel .panel-heading,
+.loginpanel .panel-heading {
+  background: var(--ccna-navy) !important;
+  color: var(--ccna-white) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border: none;
+  padding: 18px 24px;
+}
+
+.login-panel .panel-body,
+.loginpanel .panel-body {
+  padding: 28px 32px;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────── */
+.btn-primary,
+input[type="submit"].btn-primary {
+  background: var(--ccna-teal) !important;
+  background-image: none !important;
+  border-color: var(--ccna-teal) !important;
+  color: var(--ccna-white) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 4px;
+  padding: 9px 22px;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+input[type="submit"].btn-primary:hover {
+  background: #008F86 !important;
+  border-color: #008F86 !important;
+}
+
+.btn-default {
+  background: var(--ccna-white) !important;
+  border-color: var(--ccna-border) !important;
+  color: var(--ccna-navy) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 4px;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease;
+}
+
+.btn-default:hover {
+  border-color: var(--ccna-teal) !important;
+  color: var(--ccna-teal) !important;
+}
+
+/* ── Form Controls ────────────────────────────────────────────────── */
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  border: 1px solid var(--ccna-border) !important;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  color: var(--ccna-text);
+  box-shadow: none !important;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: var(--ccna-teal) !important;
+  outline: none;
+}
+
+/* ── Page Content Panels ──────────────────────────────────────────── */
+.panel {
+  border: none !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 5, 61, 0.08);
+  background: var(--ccna-white);
+}
+
+.panel-heading {
+  background: var(--ccna-navy) !important;
+  color: var(--ccna-white) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border: none !important;
+  border-radius: 8px 8px 0 0 !important;
+  padding: 14px 20px;
+}
+
+.panel-body {
+  padding: 20px;
+}
+
+/* ── Page Header ──────────────────────────────────────────────────── */
+.page-header,
+.portlet-title {
+  border-bottom: 2px solid var(--ccna-border);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.page-header h1,
+.page-header h2 {
+  color: var(--ccna-navy);
+  font-size: 22px;
+}
+
+/* ── Sidebar / Menu ───────────────────────────────────────────────── */
+.sidebar,
+.sidebar-menu,
+.nav-pills {
+  background: var(--ccna-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 5, 61, 0.08);
+  overflow: hidden;
+}
+
+.sidebar .nav-pills > li > a,
+.nav-pills > li > a {
+  color: var(--ccna-text);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 0 !important;
+  border-left: 3px solid transparent;
+  padding: 11px 18px;
+  transition: all 0.2s ease;
+}
+
+.sidebar .nav-pills > li > a:hover,
+.nav-pills > li > a:hover {
+  background: rgba(0, 168, 157, 0.08) !important;
+  color: var(--ccna-teal);
+  border-left-color: var(--ccna-teal);
+}
+
+.sidebar .nav-pills > li.active > a,
+.nav-pills > li.active > a {
+  background: var(--ccna-navy) !important;
+  color: var(--ccna-white) !important;
+  border-left-color: var(--ccna-teal);
+}
+
+/* ── Table Styles ─────────────────────────────────────────────────── */
+.table {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+
+.table > thead > tr > th {
+  background: var(--ccna-navy);
+  color: var(--ccna-white);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none !important;
+  padding: 12px 14px;
+}
+
+.table > tbody > tr:nth-child(even) {
+  background-color: var(--ccna-light-bg);
+}
+
+.table > tbody > tr:hover {
+  background-color: rgba(0, 168, 157, 0.06) !important;
+}
+
+.table > tbody > tr > td {
+  border-color: var(--ccna-border) !important;
+  vertical-align: middle;
+  padding: 10px 14px;
+}
+
+/* ── Status Labels / Badges ───────────────────────────────────────── */
+.label-success, .badge-success { background-color: var(--ccna-green) !important; }
+.label-info,    .badge-info    { background-color: var(--ccna-teal)  !important; }
+.label-primary, .badge-primary { background-color: var(--ccna-navy)  !important; }
+.label-warning, .badge-warning { background-color: #F5A623           !important; }
+.label-danger,  .badge-danger  { background-color: #D0021B           !important; }
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+.footer,
+#footer {
+  background: var(--ccna-navy) !important;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  padding: 16px 24px;
+  border-top: 3px solid var(--ccna-teal);
+}
+
+.footer a,
+#footer a {
+  color: rgba(255,255,255,0.75);
+}
+
+.footer a:hover,
+#footer a:hover {
+  color: var(--ccna-white);
+}
+
+/* ── Alerts ───────────────────────────────────────────────────────── */
+.alert {
+  border: none;
+  border-radius: 6px;
+  border-left: 4px solid;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+
+.alert-success {
+  background: #EDF7ED;
+  border-left-color: var(--ccna-green);
+  color: #2E6B2E;
+}
+
+.alert-info {
+  background: #E8F6F5;
+  border-left-color: var(--ccna-teal);
+  color: #00635B;
+}
+
+.alert-warning {
+  background: #FEF9EC;
+  border-left-color: #F5A623;
+  color: #7A5200;
+}
+
+.alert-danger {
+  background: #FDECEA;
+  border-left-color: #D0021B;
+  color: #7B0010;
+}
+
+/* ── Breadcrumb ───────────────────────────────────────────────────── */
+.breadcrumb {
+  background: transparent;
+  padding: 4px 0 12px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.breadcrumb > li + li::before {
+  color: var(--ccna-text-mid);
+}
+
+.breadcrumb > .active {
+  color: var(--ccna-navy);
+}
+
+/* ── Pagination ───────────────────────────────────────────────────── */
+.pagination > li > a {
+  color: var(--ccna-teal);
+  border-color: var(--ccna-border);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+.pagination > li > a:hover {
+  background: var(--ccna-light-bg);
+  border-color: var(--ccna-teal);
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover {
+  background: var(--ccna-navy) !important;
+  border-color: var(--ccna-navy) !important;
+}
+
+/* ── Logo Replacement ─────────────────────────────────────────────── */
+/* Hide the original Vtiger logo image */
+a.logo-left img {
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Apply CCNA logo as background on the anchor */
+a.logo-left {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-width: 80px !important;
+  height: 50px !important;
+  background-image: url('https://cdn.jsdelivr.net/gh/paulfender/ccna-portal-theme@main/CCNA%20Logo.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center left !important;
+}
+
+/* ── Navbar colour ────────────────────────────────────────────────── */
+nav.navbar.navbar-inverse.navbar-static-top,
+.navbar-inverse {
+  background-color: #00053D !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0,5,61,0.3);
+  position: relative;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: rgba(255,255,255,0.85) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #ffffff !important;
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff !important;
+  background-color: rgba(255,255,255,0.08) !important;
+  border-bottom: 3px solid #00A89D;
+}
+
+/* ── Background Image ─────────────────────────────────────────────── */
+html {
+  background-image: url('https://cdn.jsdelivr.net/gh/paulfender/ccna-portal-theme@main/laptop%20background.jpg') !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+body {
+  background-color: transparent !important;
+}
+
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0; left: 0; right: 0; bottom: 0 !important;
+  background: rgba(245, 246, 250, 0.85) !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+.menu,
+div.webapp-page,
+footer.app-footer {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Ensure dropdowns and modals always render above the overlay */
+.dropdown-menu,
+.dropdown,
+.open .dropdown-menu,
+ul.dropdown-menu,
+.navbar .dropdown-menu {
+  z-index: 9999 !important;
+  position: absolute !important;
+  pointer-events: auto !important;
+}
+
+/* Belt and braces - navbar itself above overlay */
+nav.navbar.navbar-inverse.navbar-static-top,
+.navbar {
+  z-index: 1000 !important;
+  position: relative !important;
+}
+
+/* ── Login page: logo above form ──────────────────────────────────── */
+.login-panel .panel-heading,
+.loginpanel .panel-heading {
+  min-height: 90px;
+  background-image: url('https://cdn.jsdelivr.net/gh/paulfender/ccna-portal-theme@main/CCNA%20Logo.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: auto 60px !important;
+  background-position: center 14px !important;
+  padding-top: 80px !important;
+}
