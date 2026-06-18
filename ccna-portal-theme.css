@@ -488,18 +488,25 @@ ul.dropdown-menu,
  */
 html {
   background-image: url('https://cdn.jsdelivr.net/gh/CCNA-Support/ccna-portal-theme@main/laptop%20background.jpg') !important;
-  background-size: 45% auto !important;
-  background-position: left bottom !important;
+  background-size: cover !important;
+  background-position: center top !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
-  background-color: #F5F6FA !important;
 }
 
 body {
   background-color: transparent !important;
 }
 
-/* No overlay needed - image positioned bottom-left out of content way */
+/* Subtle white overlay - pointer-events none so clicks pass through */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0; left: 0; right: 0; bottom: 0 !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
 
 /* ── Login page: logo above form ──────────────────────────────────── */
 .login-panel .panel-heading,
@@ -510,4 +517,33 @@ body {
   background-size: auto 60px !important;
   background-position: center 14px !important;
   padding-top: 80px !important;
+}
+
+/* Z-index hierarchy:
+   overlay    = 0   (background wash, no pointer events)
+   content    = 1   (page panels, text)
+   navbar     = 1000 (always above content)
+   dropdowns  = 9999 (always on top of everything)
+*/
+.menu,
+div.webapp-page,
+footer.app-footer {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+nav.navbar,
+.navbar {
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+.dropdown-menu,
+.open .dropdown-menu,
+ul.dropdown-menu,
+.navbar .dropdown-menu,
+li.dropdown.open .dropdown-menu {
+  z-index: 9999 !important;
+  position: absolute !important;
+  pointer-events: auto !important;
 }
