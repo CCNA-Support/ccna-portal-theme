@@ -425,7 +425,7 @@ a.logo-left {
   align-items: center !important;
   min-width: 80px !important;
   height: 50px !important;
-  background-image: url('https://cdn.jsdelivr.net/gh/paulfender/ccna-portal-theme@main/CCNA%20Logo.png') !important;
+  background-image: url('https://cdn.jsdelivr.net/gh/CCNA-Support/ccna-portal-theme@main/CCNA%20Logo.png') !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
   background-position: center left !important;
@@ -462,7 +462,7 @@ nav.navbar.navbar-inverse.navbar-static-top,
 
 /* ── Background Image ─────────────────────────────────────────────── */
 html {
-  background-image: url('https://cdn.jsdelivr.net/gh/paulfender/ccna-portal-theme@main/laptop%20background.jpg') !important;
+  background-image: url('https://cdn.jsdelivr.net/gh/CCNA-Support/ccna-portal-theme@main/laptop%20background.jpg') !important;
   background-size: cover !important;
   background-position: center top !important;
   background-repeat: no-repeat !important;
@@ -511,7 +511,7 @@ nav.navbar.navbar-inverse.navbar-static-top,
 .login-panel .panel-heading,
 .loginpanel .panel-heading {
   min-height: 90px;
-  background-image: url('https://cdn.jsdelivr.net/gh/paulfender/ccna-portal-theme@main/CCNA%20Logo.png') !important;
+  background-image: url('https://cdn.jsdelivr.net/gh/CCNA-Support/ccna-portal-theme@main/CCNA%20Logo.png') !important;
   background-repeat: no-repeat !important;
   background-size: auto 60px !important;
   background-position: center 14px !important;
