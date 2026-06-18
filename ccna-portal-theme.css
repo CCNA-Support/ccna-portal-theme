@@ -431,6 +431,16 @@ a.logo-left {
   background-position: center left !important;
 }
 
+/* Protect user account icon - must not be hidden */
+ul.navbar-nav.navbar-right a.dropdown-toggle img,
+.navbar-right .dropdown-toggle img,
+a.dropdown-toggle img {
+  opacity: 1 !important;
+  width: auto !important;
+  height: 20px !important;
+  display: inline-block !important;
+}
+
 /* ── Navbar colour ────────────────────────────────────────────────── */
 nav.navbar.navbar-inverse.navbar-static-top,
 .navbar-inverse {
@@ -439,6 +449,7 @@ nav.navbar.navbar-inverse.navbar-static-top,
   border: none !important;
   box-shadow: 0 2px 8px rgba(0,5,61,0.3);
   position: relative;
+  z-index: 1000 !important;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -460,38 +471,8 @@ nav.navbar.navbar-inverse.navbar-static-top,
   border-bottom: 3px solid #00A89D;
 }
 
-/* ── Background Image ─────────────────────────────────────────────── */
-html {
-  background-image: url('https://cdn.jsdelivr.net/gh/CCNA-Support/ccna-portal-theme@main/laptop%20background.jpg') !important;
-  background-size: cover !important;
-  background-position: center top !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-}
-
-body {
-  background-color: transparent !important;
-}
-
-body::before {
-  content: '' !important;
-  position: fixed !important;
-  top: 0; left: 0; right: 0; bottom: 0 !important;
-  background: rgba(245, 246, 250, 0.85) !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
-}
-
-.menu,
-div.webapp-page,
-footer.app-footer {
-  position: relative !important;
-  z-index: 10 !important;
-}
-
-/* Ensure dropdowns and modals always render above the overlay */
+/* Ensure dropdowns render above everything */
 .dropdown-menu,
-.dropdown,
 .open .dropdown-menu,
 ul.dropdown-menu,
 .navbar .dropdown-menu {
@@ -500,10 +481,27 @@ ul.dropdown-menu,
   pointer-events: auto !important;
 }
 
-/* Belt and braces - navbar itself above overlay */
-nav.navbar.navbar-inverse.navbar-static-top,
-.navbar {
-  z-index: 1000 !important;
+/* ── Background Image ─────────────────────────────────────────────── */
+/*
+ * Image is already very light/washed so no overlay needed.
+ * Removing body::before overlay eliminates all click-blocking issues.
+ */
+html {
+  background-image: url('https://cdn.jsdelivr.net/gh/CCNA-Support/ccna-portal-theme@main/laptop%20background.jpg') !important;
+  background-size: cover !important;
+  background-position: left top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+body {
+  background-color: transparent !important;
+}
+
+/* All portal content sits naturally above background - no z-index needed */
+.menu,
+div.webapp-page,
+footer.app-footer {
   position: relative !important;
 }
 
@@ -516,14 +514,4 @@ nav.navbar.navbar-inverse.navbar-static-top,
   background-size: auto 60px !important;
   background-position: center 14px !important;
   padding-top: 80px !important;
-}
-
-/* Protect user account icon in navbar */
-ul.navbar-nav.navbar-right a.dropdown-toggle img,
-.navbar-right .dropdown-toggle img,
-a.dropdown-toggle img {
-  opacity: 1 !important;
-  width: auto !important;
-  height: 20px !important;
-  display: inline-block !important;
 }
