@@ -517,3 +517,13 @@ nav.navbar.navbar-inverse.navbar-static-top,
   background-position: center 14px !important;
   padding-top: 80px !important;
 }
+
+/* Protect user account icon in navbar */
+ul.navbar-nav.navbar-right a.dropdown-toggle img,
+.navbar-right .dropdown-toggle img,
+a.dropdown-toggle img {
+  opacity: 1 !important;
+  width: auto !important;
+  height: 20px !important;
+  display: inline-block !important;
+}
