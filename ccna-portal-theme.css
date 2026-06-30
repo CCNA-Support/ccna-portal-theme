@@ -487,7 +487,7 @@ ul.dropdown-menu,
  * Removing body::before overlay eliminates all click-blocking issues.
  */
 html {
-  background: linear-gradient(160deg, #EDF2F7 0%, #E8F5F4 60%, #EEF7EE 100%) !important;
+  background: linear-gradient(160deg, #D6E8F0 0%, #EDF2F7 50%, #D6EDEA 100%) !important;
 }
 
 
