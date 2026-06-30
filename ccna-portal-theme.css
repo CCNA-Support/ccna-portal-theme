@@ -482,10 +482,16 @@ ul.dropdown-menu,
 }
 
 /* ── Background Image ─────────────────────────────────────────────── */
-
+/*
+ * Image is already very light/washed so no overlay needed.
+ * Removing body::before overlay eliminates all click-blocking issues.
+ */
 html {
-    background:linear-gradient(160deg, #EDF2F7 0%, #E8F5F4 60%, #EEF7EE 100%) !important;
+  background: linear-gradient(160deg, #EDF2F7 0%, #E8F5F4 60%, #EEF7EE 100%) !important;
 }
+
+
+
 
 
 /* ── Login page: logo above form ──────────────────────────────────── */
